@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "img": "https://i.ibb.co/WkZ57k5/modern-business-building-with-glass-wall-from-empty-floor-1-1.png",
+        "name": "Building Design",
+        "price": 1000,
+        "description": "I can fulfill your dream. Please dicide your self. If you want to fulfill dream building in real life, I can fullfil your dream"
+    },
+    {
+        "id": 2,
+        "img": "https://i.ibb.co/stJdhV2/view-modern-office-1.png",
+        "name": "Interior Design",
+        "price": 500,
+        "description": "I can fulfill your dream. Please dicide your self. If you want to fulfill dream building in real life, I can fullfil your dream"
+    },
+    {
+        "id": 3,
+        "img": "https://i.ibb.co/2hdn06M/toy-house-notebook-draft-1.png",
+        "name": "Space Planning",
+        "price": 1000,
+        "description": "I can fulfill your dream. Please dicide your self. If you want to fulfill dream building in real life, I can fullfil your dream"
+    }
+]
