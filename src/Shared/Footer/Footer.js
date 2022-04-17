@@ -8,7 +8,7 @@ import linkedIn from '../../images/social/LinkedIn.png'
 const Footer = () => {
     return (
         <div className='footer text-center text-white'>
-        <div className='pt-3'>
+        <div className='pt-4'>
         <h6>Smart Root</h6>
             <p>Copyright &copy; {new Date().getUTCFullYear()}, Smart Root</p>
             <img src={facebook} alt="" />

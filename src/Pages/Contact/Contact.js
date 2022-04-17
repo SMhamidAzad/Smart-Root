@@ -6,7 +6,7 @@ import './Contact.css'
 
 const Contact = () => {
     return (
-        <div className='row row-cols-md-2 py-5 m-0'>
+        <div className='row row-cols-md-2 py-5 m-0 mb-5'>
             <div className='row-md-4'>
                 <img style={{ width: "85%" }} className='' src="https://i.ibb.co/3ym9MJS/raj-rana-z-CQs-BI7-Zlt-Q-unsplash-1.png" alt="" />
             </div>

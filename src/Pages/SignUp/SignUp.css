@@ -56,6 +56,8 @@
     border-radius: 6px;
     font-size: 22px;
     color: white;
+    font-weight: 500;
     cursor: pointer;
-    background: linear-gradient(25deg, #f90632db 0%, #b10423db 100%);
+    background: linear-gradient(25deg, #046f8a 0%, #0792b4 100%);
+    /* background: linear-gradient(25deg, #f90632db 0%, #b10423db 100%); */
 }
