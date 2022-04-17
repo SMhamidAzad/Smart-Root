@@ -3,3 +3,28 @@
     background-size: cover;
     height: 88vh;
 }
+.title-first-part{
+    color: #343A40;
+    font-weight: 700;
+    font-size: 50px;
+}
+.title-last-part{
+    background-color: #EC0E0E;
+    color: white;
+    font-weight: 700;
+    font-size: 50px;
+    padding: 5px 15px;
+}
+@media screen and (max-width: 688px){
+    .banner{
+        height: 50vh;
+    }
+    .title-first-part{
+        
+        font-size: 25px;
+    }
+    .title-last-part{
+        
+        font-size: 25px;
+    }
+}

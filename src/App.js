@@ -9,10 +9,11 @@ import About from './Pages/About/About';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import NotFound from './Pages/NotFound/NotFound';
+import Footer from './Shared/Footer/Footer';
 
 function App() {
   return (
-    <div>
+    <>
        <Header></Header>
        <Routes>
          <Route path='/' element={<Home></Home>}></Route>
@@ -23,7 +24,8 @@ function App() {
          <Route path='/signup' element={<SignUp></SignUp>}></Route>
          <Route path='*' element={<NotFound></NotFound>}></Route>
        </Routes>
-    </div>
+       <Footer></Footer>
+    </>
   );
 }
 
