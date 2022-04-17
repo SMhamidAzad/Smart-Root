@@ -8,7 +8,7 @@ import CustomLink from '../CustomLink/CustomLink';
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
     return (
-        <Navbar style={{ backgroundColor: '#040924' }} className='py-3' collapseOnSelect expand="lg" variant="dark">
+        <Navbar style={{ backgroundColor: '#80CADC' }} className='py-3' collapseOnSelect expand="lg" variant="dark">
             <Container>
                 <Navbar.Brand href="#home" className='fw-bold fs-4' style={{ color: '#E86C53' }}>Smart Root</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />

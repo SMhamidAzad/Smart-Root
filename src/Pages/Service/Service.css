@@ -1,0 +1,14 @@
+.service{
+    background-color: #F2F2F2;
+}
+.service-price{
+    font-size: 50px;
+    font-weight: 700;
+    color: #EC0E0E;
+}
+.btn-style{
+    background-color: #343A40;
+    text-decoration: none;
+    color: white;
+    padding: 6px 9px;
+}
