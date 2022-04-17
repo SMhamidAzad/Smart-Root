@@ -90,7 +90,7 @@ const Login = () => {
                     {allError?.passWordError && <p className='text-danger'>❌{allError.passWordError}</p>}
                     <button className='submit-btn'>Login</button>
                 </form>
-                <p>New to Smart Root? <Link to='/signup'>Please Register</Link></p>
+                <p className='mt-3'>New to Smart Root? <Link to='/signup' className='text-decoration-none fw-bolder'>Please Register</Link></p>
 
                 <SocialLogin></SocialLogin>
               

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.css'
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../.firebase.init';
+import { sendEmailVerification } from 'firebase/auth';
 
 const SignUp = () => {
 
@@ -11,7 +12,7 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth,{ sendEmailVerification: true});
 
     const [userDetails, setUserDetails] = useState({
         email: "",
@@ -119,7 +120,7 @@ const SignUp = () => {
                     <button className='submit-btn'>SignUp</button>
                 </form>
 
-                <p>Already have an Account? <Link to='/login'>Please Login</Link></p>
+                <p className='mt-3'>Already have an Account? <Link to='/login' className='text-decoration-none fw-bolder'>Please Login</Link></p>
             </div>
 
         </div>
