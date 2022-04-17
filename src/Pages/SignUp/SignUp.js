@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './SignUp.css'
 
 const SignUp = () => {
+    // const [userDetails, setUserDetails]
     return (
         <div className='form-container'>
             <div className='form'>
@@ -32,7 +34,9 @@ const SignUp = () => {
 
                     <button className='submit-btn'>SignUp</button>
                 </form>
+                <p>Already have an Account? <Link to='/login'>Please Login</Link></p>
             </div>
+            
         </div>
     );
 };

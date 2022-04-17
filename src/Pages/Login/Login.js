@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -20,12 +21,9 @@ const Login = () => {
                             
                         </div>
                     </div>
-                    {/* {errors?.password && <p className='text-danger'>❌{errors.password}</p>} */}
-                    
-
-
                     <button className='submit-btn'>Login</button>
                 </form>
+                <p>New to Smart Root? <Link to='/signup'>Please Register</Link></p>
             </div>
         </div>
     );
