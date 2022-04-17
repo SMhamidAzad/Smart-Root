@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.css'
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../.firebase.init';
@@ -24,6 +24,13 @@ const SignUp = () => {
         others: ""
     })
 
+    const navigate = useNavigate();
+    useEffect(()=>{
+        if(user){
+            navigate("/")
+        }
+    },[user])
+
     //   get email input value and validation check 
     const handleEmailChange = event => {
         const emailValue = event.target.value;
@@ -42,7 +49,6 @@ const SignUp = () => {
     //   get password input value and validation check 
     const handlePasswordChange = event => {
         const passValue = event.target.value;
-        console.log(passValue.length);
         if (passValue.length>=6) {
             setUserDetails({ ...userDetails, password: passValue });
             setAllError({ ...allError, passWordError: "" })
@@ -52,6 +58,8 @@ const SignUp = () => {
             setUserDetails({ ...userDetails, password: "" })
         }
     }
+
+    // get confirm password input value and validation check 
     const handleConfirmPassChange = event => {
         const confirmPassValue = event.target.value
         if (confirmPassValue === userDetails.password) {
@@ -62,12 +70,16 @@ const SignUp = () => {
             setAllError({ ...allError, passWordError: "Password do not matched!" })
             setUserDetails({ ...userDetails, confirmPassword: "" })
         }
-
     }
+
+    // create user with clicking signup button 
     const handleSignUp = event => {
         event.preventDefault();
-        console.log(userDetails);
+        createUserWithEmailAndPassword(userDetails.email,userDetails.password);
+        console.log("user successfully created", user);
     }
+
+
     return (
         <div className='form-container'>
             <div className='form'>
@@ -76,7 +88,11 @@ const SignUp = () => {
                     <div className='input-div'>
                         <label htmlFor="email">Email</label>
                         <div className='input-field'>
-                            <input onChange={handleEmailChange} type="text" name="email" id="email" />
+                            <input 
+                            onChange={handleEmailChange} 
+                            type="text" 
+                            name="email" 
+                            id="email" />
                         </div>
                     </div>
                 {allError?.emailError && <p className='text-danger'>❌{allError.emailError}</p>}
@@ -84,21 +100,25 @@ const SignUp = () => {
                     <div className='input-div'>
                         <label htmlFor="password">Password</label>
                         <div style={{ position: "relative" }} className='input-field'>
-                            <input onChange={handlePasswordChange} type="password" name="password" id="password" />
-
+                            <input 
+                            onChange={handlePasswordChange} type="password" 
+                            name="password" 
+                            id="password" />
                         </div>
                     </div>
                     {allError?.passWordError && <p className='text-danger'>❌{allError.passWordError}</p>}
                     <div className='input-div'>
                         <label htmlFor="confirmPass">Confirm Password</label>
                         <div className='input-field'>
-                            <input onChange={handleConfirmPassChange} type="password" name="confirmPass" id="confirmPass" />
+                            <input 
+                            onChange={handleConfirmPassChange} type="password" 
+                            name="confirmPass" 
+                            id="confirmPass" />
                         </div>
                     </div>
-
-
                     <button className='submit-btn'>SignUp</button>
                 </form>
+
                 <p>Already have an Account? <Link to='/login'>Please Login</Link></p>
             </div>
 
