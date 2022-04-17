@@ -4,6 +4,8 @@ import './SignUp.css'
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../.firebase.init';
 import { sendEmailVerification } from 'firebase/auth';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const SignUp = () => {
 
@@ -24,10 +26,16 @@ const SignUp = () => {
         passWordError: "",
         others: ""
     })
+    useEffect(()=>{
+        if(error){
+            toast.error(error.message)
+        }
+    },[error])
 
     const navigate = useNavigate();
     useEffect(()=>{
         if(user){
+            toast.success("User Successfully Created")
             navigate("/")
         }
     },[user])
@@ -122,7 +130,7 @@ const SignUp = () => {
 
                 <p className='mt-3'>Already have an Account? <Link to='/login' className='text-decoration-none fw-bolder'>Please Login</Link></p>
             </div>
-
+           <ToastContainer/>
         </div>
     );
 };

@@ -3,6 +3,8 @@ import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../.firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [
@@ -29,9 +31,16 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
     useEffect(() => {
         if (user) {
+            
             navigate(from, { replace: true });
+            toast.success("User Successfully Login")
         }
     }, [user])
+    useEffect(()=>{
+        if(error){
+            toast.error(error.message)
+        }
+    },[error])
 
     // reset password 
     const passwordReset = async () => {
@@ -39,10 +48,10 @@ const Login = () => {
         console.log(email);
         if (email) {
             await sendPasswordResetEmail(email);
-            console.log('Sent email');
+            toast.success('Please check your email and reset password');
         }
         else{
-            console.log('please enter your email address');
+            toast.error('Please Fill your email in field');
         }
     }
 
@@ -105,11 +114,12 @@ const Login = () => {
                 </form>
                 <p className='mt-3'>New to Smart Root? <Link to='/signup' className='text-decoration-none fw-bolder'>Please Register</Link></p>
 
-                <p>Forget Password?<button onClick={passwordReset} className='text-decoration-none fw-bolder'>Reset Password</button></p>
+                <p>Forget Password?<button onClick={passwordReset} className='border-0 fw-bolder bg-white'>Reset Password</button></p>
 
                 <SocialLogin></SocialLogin>
               
             </div>
+            <ToastContainer/>
         </div>
     );
 };
