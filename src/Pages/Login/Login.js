@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../.firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -12,7 +12,7 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
    
-
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     const [userDetails, setUserDetails] = useState({
         email: "",
         password: "",
@@ -32,6 +32,19 @@ const Login = () => {
             navigate(from, { replace: true });
         }
     }, [user])
+
+    // reset password 
+    const passwordReset = async () => {
+        const email = userDetails.email;
+        console.log(email);
+        if (email) {
+            await sendPasswordResetEmail(email);
+            console.log('Sent email');
+        }
+        else{
+            console.log('please enter your email address');
+        }
+    }
 
     //   get email input value and validation check 
     const handleEmailChange = event => {
@@ -91,6 +104,8 @@ const Login = () => {
                     <button className='submit-btn'>Login</button>
                 </form>
                 <p className='mt-3'>New to Smart Root? <Link to='/signup' className='text-decoration-none fw-bolder'>Please Register</Link></p>
+
+                <p>Forget Password?<button onClick={passwordReset} className='text-decoration-none fw-bolder'>Reset Password</button></p>
 
                 <SocialLogin></SocialLogin>
               
