@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../.firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const [
@@ -9,9 +10,9 @@ const Login = () => {
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword(auth);
+    ] = useSignInWithEmailAndPassword(auth);
 
-      const [userDetails, setUserDetails] = useState({
+    const [userDetails, setUserDetails] = useState({
         email: "",
         password: "",
         confirmPassword: ""
@@ -23,14 +24,14 @@ const Login = () => {
     })
 
     const navigate = useNavigate();
-    useEffect(()=>{
-        if(user){
+    useEffect(() => {
+        if (user) {
             navigate("/")
         }
-    },[user])
+    }, [user])
 
-     //   get email input value and validation check 
-     const handleEmailChange = event => {
+    //   get email input value and validation check 
+    const handleEmailChange = event => {
         const emailValue = event.target.value;
         const emailChecker = /\S+@\S+\.\S+/;
         if (emailChecker.test(emailValue)) {
@@ -43,10 +44,10 @@ const Login = () => {
         }
     }
 
-       //   get password input value and validation check 
-       const handlePasswordChange = event => {
+    //   get password input value and validation check 
+    const handlePasswordChange = event => {
         const passValue = event.target.value;
-        if (passValue.length>=6) {
+        if (passValue.length >= 6) {
             setUserDetails({ ...userDetails, password: passValue });
             setAllError({ ...allError, passWordError: "" })
         }
@@ -57,10 +58,10 @@ const Login = () => {
     }
 
 
-     // login user with clicking login button 
-     const handleSignUp = event => {
+    // login user with clicking login button 
+    const handleSignUp = event => {
         event.preventDefault();
-        signInWithEmailAndPassword(userDetails.email,userDetails.password);
+        signInWithEmailAndPassword(userDetails.email, userDetails.password);
         console.log("user successfully login", user);
     }
 
@@ -78,15 +79,18 @@ const Login = () => {
                     {allError?.emailError && <p className='text-danger'>❌{allError.emailError}</p>}
                     <div className='input-div'>
                         <label htmlFor="password">Password</label>
-                        <div style={{position: "relative"}} className='input-field'>
+                        <div style={{ position: "relative" }} className='input-field'>
                             <input onChange={handlePasswordChange} type="password" name="password" id="password" />
-                            
+
                         </div>
                     </div>
                     {allError?.passWordError && <p className='text-danger'>❌{allError.passWordError}</p>}
                     <button className='submit-btn'>Login</button>
                 </form>
                 <p>New to Smart Root? <Link to='/signup'>Please Register</Link></p>
+
+                <SocialLogin></SocialLogin>
+              
             </div>
         </div>
     );
