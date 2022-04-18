@@ -21,12 +21,10 @@
     .banner{
         height: 50vh;
     }
-    .title-first-part{
-        
+    .title-first-part{      
         font-size: 25px;
     }
-    .title-last-part{
-        
+    .title-last-part{       
         font-size: 25px;
     }
 }

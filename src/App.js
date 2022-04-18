@@ -15,21 +15,21 @@ import RequireAuth from './Pages/RequireAuth/RequireAuth';
 function App() {
   return (
     <>
-       <Header></Header>
-       <Routes>
-         <Route path='/' element={<Home></Home>}></Route>
-         <Route path='/checkout' element={
-           <RequireAuth>
-             <CheckOut></CheckOut>
-           </RequireAuth>
-         }></Route>
-         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
-         <Route path='/about' element={<About></About>}></Route>
-         <Route path='/login' element={<Login></Login>}></Route>
-         <Route path='/signup' element={<SignUp></SignUp>}></Route>
-         <Route path='*' element={<NotFound></NotFound>}></Route>
-       </Routes>
-       <Footer></Footer>
+      <Header></Header>
+      <Routes>
+            <Route path='/' element={<Home></Home>}></Route>
+            <Route path='/checkout' element={
+                  <RequireAuth>
+                    <CheckOut></CheckOut>
+                  </RequireAuth>
+                }></Route>
+            <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+            <Route path='/about' element={<About></About>}></Route>
+            <Route path='/login' element={<Login></Login>}></Route>
+            <Route path='/signup' element={<SignUp></SignUp>}></Route>
+            <Route path='*' element={<NotFound></NotFound>}></Route>
+      </Routes>
+      <Footer></Footer>
     </>
   );
 }

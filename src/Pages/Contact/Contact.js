@@ -8,7 +8,7 @@ const Contact = () => {
     return (
         <div className='row row-cols-md-2 py-5 m-0 mb-5'>
             <div className='row-md-4'>
-                <img style={{ width: "85%" }} className='' src="https://i.ibb.co/3ym9MJS/raj-rana-z-CQs-BI7-Zlt-Q-unsplash-1.png" alt="" />
+                <img style={{ width: "85%" }} src="https://i.ibb.co/3ym9MJS/raj-rana-z-CQs-BI7-Zlt-Q-unsplash-1.png" alt="" />
             </div>
             <div>
                 <p style={{ marginBottom: "-7px" }} className='primary-color'>Stay Tuned</p>

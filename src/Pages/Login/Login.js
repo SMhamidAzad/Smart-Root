@@ -36,13 +36,6 @@ const Login = () => {
         }
     }, [user])
 
-    // useEffect(()=>{
-    //     if(error){
-    //         console.log(error);
-    //         toast.error(error.message)
-    //     }
-    // },[error])
-
     // reset password 
     const passwordReset = async () => {
         const email = userDetails.email;
@@ -69,11 +62,14 @@ const Login = () => {
         }
     }
    
+
+    // error message show in ui 
     useEffect(() => {
         if (error) {
            toast.error(error.message)
         }
     }, [error])
+
 
     //   get password input value and validation check 
     const handlePasswordChange = event => {
@@ -103,15 +99,23 @@ const Login = () => {
                     <div className='input-div'>
                         <label htmlFor="email">Email</label>
                         <div className='input-field'>
-                            <input onChange={handleEmailChange} type="text" name="email" id="email" required />
+                            <input 
+                            onChange={handleEmailChange} 
+                            type="text" 
+                            name="email" 
+                            id="email" 
+                            required />
                         </div>
                     </div>
                     {allError?.emailError && <p className='text-danger'>❌{allError.emailError}</p>}
                     <div className='input-div'>
                         <label htmlFor="password">Password</label>
                         <div style={{ position: "relative" }} className='input-field'>
-                            <input onChange={handlePasswordChange} type="password" name="password" id="password" required />
-
+                            <input 
+                            onChange={handlePasswordChange} type="password" 
+                            name="password" 
+                            id="password" 
+                            required />
                         </div>
                     </div>
                     {allError?.passWordError && <p className='text-danger'>❌{allError.passWordError}</p>}
@@ -119,10 +123,15 @@ const Login = () => {
                 </form>
                 <p className='mt-3'>New to Smart Root? <Link to='/signup' className='text-decoration-none fw-bolder'>Please Register</Link></p>
 
-                <p>Forget Password?<button onClick={passwordReset} className='border-0 fw-bolder bg-white text-primary'>Reset Password</button></p>
-
+                <p>
+                    Forget Password?
+                    <button 
+                        onClick={passwordReset} 
+                        className='border-0 fw-bolder bg-white text-primary'>
+                            Reset Password
+                    </button>
+                </p>
                 <SocialLogin></SocialLogin>
-
             </div>
             <ToastContainer />
         </div>

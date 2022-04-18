@@ -2,6 +2,8 @@
     background-color: #343A40;
     height: 26vh;
 }
+
+/* media query for footer section  */
 @media screen and (max-width: 688px) {
     .footer{
         padding-top: 25px;
