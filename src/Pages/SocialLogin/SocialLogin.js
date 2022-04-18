@@ -14,7 +14,7 @@ const SocialLogin = () => {
     }, [user])
     return (
         <div>
-            <div className='d-flex align-items-center'>
+            <div className='d-flex align-items-center hr-line'>
                 <div style={{ width: '186px', borderTop: '2px solid gray' }}></div>
                 <p className='mt-2 mx-3'>or</p>
                 <div style={{ width: '186px', borderTop: '2px solid gray' }}></div>

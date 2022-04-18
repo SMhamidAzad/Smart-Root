@@ -61,3 +61,16 @@
     background: linear-gradient(25deg, #046f8a 0%, #0792b4 100%);
     /* background: linear-gradient(25deg, #f90632db 0%, #b10423db 100%); */
 }
+
+@media screen and (max-width: 688px) {
+    .form{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .input-div input{
+        width: 80%;
+    }
+    .submit-btn{
+        width: 80%
+    }
+}
