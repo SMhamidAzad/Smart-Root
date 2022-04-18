@@ -10,8 +10,9 @@ const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
+        loading,
         error,
-    ] = useSignInWithEmailAndPassword(auth);
+      ] = useSignInWithEmailAndPassword(auth);
 
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const [userDetails, setUserDetails] = useState({
@@ -30,21 +31,21 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
     useEffect(() => {
         if (user) {
-
-            navigate(from, { replace: true });
             toast.success("User Successfully Login")
+            navigate(from, { replace: true });
         }
     }, [user])
-    useEffect(() => {
-        if (error) {
-            toast.error(error.message)
-        }
-    }, [error])
+
+    // useEffect(()=>{
+    //     if(error){
+    //         console.log(error);
+    //         toast.error(error.message)
+    //     }
+    // },[error])
 
     // reset password 
     const passwordReset = async () => {
         const email = userDetails.email;
-        console.log(email);
         if (email) {
             await sendPasswordResetEmail(email);
             toast.success('Please check your email and reset password');
@@ -67,6 +68,12 @@ const Login = () => {
             setUserDetails({ ...userDetails, email: "" })
         }
     }
+   
+    useEffect(() => {
+        if (error) {
+           toast.error(error.message)
+        }
+    }, [error])
 
     //   get password input value and validation check 
     const handlePasswordChange = event => {
@@ -86,7 +93,6 @@ const Login = () => {
     const handleSignUp = event => {
         event.preventDefault();
         signInWithEmailAndPassword(userDetails.email, userDetails.password);
-        console.log("user successfully login", user);
     }
 
     return (

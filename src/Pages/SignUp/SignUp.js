@@ -9,11 +9,13 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 
 const SignUp = () => {
 
+    
     const [
         createUserWithEmailAndPassword,
         user,
+        loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+      ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const [userDetails, setUserDetails] = useState({
         email: "",
@@ -25,12 +27,6 @@ const SignUp = () => {
         passWordError: "",
         others: ""
     })
-    useEffect(() => {
-        if (error) {
-            toast.error(error.message)
-        }
-    }, [error])
-
 
     const navigate = useNavigate();
     useEffect(() => {
@@ -84,10 +80,21 @@ const SignUp = () => {
     // create user with clicking signup button 
     const handleSignUp = event => {
         event.preventDefault();
-        createUserWithEmailAndPassword(userDetails.email, userDetails.password);
+        if(userDetails.password === userDetails.confirmPassword){
+            createUserWithEmailAndPassword(userDetails.email, userDetails.password);
+        }
+        else{
+            toast.error("password and confirm password does not matched!!")
+        }
+        
         console.log("user successfully created", user);
     }
 
+    useEffect(() => {
+        if (error) {
+           toast.error(error.message)
+        }
+    }, [error])
 
     return (
         <div className='form-container'>
