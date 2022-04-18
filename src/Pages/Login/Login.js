@@ -96,7 +96,7 @@ const Login = () => {
                 <h2>Login</h2>
                 <form onSubmit={handleSignUp}>
                     <div className='input-div'>
-                        <label htmlFor="name">Email</label>
+                        <label htmlFor="email">Email</label>
                         <div className='input-field'>
                             <input onChange={handleEmailChange} type="text" name="email" id="email" />
                         </div>
