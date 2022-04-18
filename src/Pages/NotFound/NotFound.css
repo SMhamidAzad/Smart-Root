@@ -1,0 +1,20 @@
+.error-container{
+    text-align: center;
+    margin-top: 130px;
+    min-height: 80vh;
+}
+.error-message{
+    font-size: 55px;
+    font-weight: 700;
+}
+.error-code{
+    font-size: 120px;
+    color: #EC0E0E;
+    font-weight: 800;
+}
+.back-btn{
+    text-decoration: none;
+    background-color: #EC0E0E;
+    color: white;
+    padding: 8px 10px;
+}
