@@ -11,7 +11,7 @@ const Service = ({ service }) => {
                 <div className="card-body p-4">
                     <h5 className="card-title primary-color">{name}</h5>
                     <h4 className='service-price'>${price}</h4>
-                    <p className="card-text primary-color">{description}</p>
+                    <p className="card-text primary-color service-description">{description}</p>
                     <Link className='btn-style' to='/checkout'>Order Now</Link>
                 </div>
             </div>

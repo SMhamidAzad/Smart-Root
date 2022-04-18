@@ -54,23 +54,36 @@
     margin-top: 20px;
     border: none;
     border-radius: 6px;
-    font-size: 22px;
+    font-size: 19px;
     color: white;
-    font-weight: 500;
+    font-weight: 400;
     cursor: pointer;
     background: linear-gradient(25deg, #046f8a 0%, #0792b4 100%);
     /* background: linear-gradient(25deg, #f90632db 0%, #b10423db 100%); */
 }
 
 @media screen and (max-width: 688px) {
-    .form{
+    .form-container{
         width: 100%;
+        margin: 0;
+    }
+    .form{
+        width: 90%;
         margin: 0 auto;
     }
     .input-div input{
         width: 80%;
+        margin: 0 auto;
     }
     .submit-btn{
         width: 80%
+    }
+    .mobile-line{
+        width: 60%;
+        margin: 0 auto;
+    }
+    .google-btn{
+        width: 50%;
+        margin-left: 100px;
     }
 }

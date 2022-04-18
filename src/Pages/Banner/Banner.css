@@ -15,6 +15,8 @@
     font-size: 50px;
     padding: 5px 15px;
 }
+
+/* mobile responsibe  */
 @media screen and (max-width: 688px){
     .banner{
         height: 50vh;

@@ -2,9 +2,12 @@
     background-color: #F2F2F2;
 }
 .service-price{
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 700;
     color: #EC0E0E;
+}
+.service-description{
+    font-size: 15px;
 }
 .btn-style{
     background-color: #343A40;
