@@ -7,14 +7,21 @@ import './Contact.css'
 const Contact = () => {
     return (
         <div className='row row-cols-md-2 py-5 m-0 mb-5'>
-            <div className='row-md-4'>
+            <div data-aos="zoom-in"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className='row-md-4'>
                 <img style={{ width: "85%" }} src="https://i.ibb.co/3ym9MJS/raj-rana-z-CQs-BI7-Zlt-Q-unsplash-1.png" alt="" />
             </div>
             <div>
                 <p style={{ marginBottom: "-7px" }} className='primary-color'>Stay Tuned</p>
                 <h2 className='contact-title mb-5 primary-color'>I am Available 24/7!</h2>
                 <p className='mb-5 primary-color'>Contact with me within 10Am to 6PM via phone. Also you can meet with me in my Chittagong Office. Also you need to contact with me for any kind of issue, Please mail me personally in belows email account. Stay with me. </p>
-                <div className="row row-cols-md-3">
+                <div
+                data-aos="zoom-in-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+                className="row row-cols-md-3">
                     <div>
                         <div style={{ lineHeight: "1.1" }} className='d-flex'>
                             <p className='icon-style'><MdOutlineAlternateEmail /></p>

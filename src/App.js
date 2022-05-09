@@ -11,8 +11,14 @@ import SignUp from './Pages/SignUp/SignUp';
 import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Shared/Footer/Footer';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(()=>{
+    AOS.init()
+  },[])
   return (
     <>
       <Header></Header>

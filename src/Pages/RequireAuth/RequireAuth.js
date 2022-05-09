@@ -19,3 +19,17 @@ const RequireAuth = ({ children }) => {
 };
 
 export default RequireAuth;
+
+
+
+/* 
+const navigate = useNavigate();
+const location = useLocation()
+let from = location.state?.from?.pathname || "/";
+useEffect(() => {
+    if (user) {
+        toast.success("User Successfully Login")
+        navigate(from, { replace: true });
+    }
+}, [user])
+*/

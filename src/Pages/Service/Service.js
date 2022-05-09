@@ -5,7 +5,10 @@ import './Service.css'
 const Service = ({ service }) => {
     const { img, name, price, description } = service
     return (
-        <div className="col">
+        <div data-aos="flip-left" className="col"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+        >
             <div className="card border-0 service rounded-3">
                 <img src={img} className="card-img-top rounded-3" alt="..." />
                 <div className="card-body p-4">
